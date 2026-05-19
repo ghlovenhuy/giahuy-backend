@@ -89,5 +89,7 @@ def chat():
 import os
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+    # Render cấp cổng qua biến môi trường PORT, nếu không có thì mặc định là 10000
+    port = int(os.environ.get("PORT", 10000))
+    # Phải để host='0.0.0.0' thì Render mới thấy được cổng
+    app.run(host='0.0.0.0', port=port, debug=False)
